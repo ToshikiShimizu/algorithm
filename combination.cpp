@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+static const int MOD = 1000000007;
 int Combination(int n, int r){
     vector<vector<long long> > dp(n+1,vector<long long>(n+1));
     for (int i=0;i<=n;i++){
