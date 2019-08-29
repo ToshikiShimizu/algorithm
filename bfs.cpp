@@ -16,9 +16,14 @@ vector<vector<int> > bfs(vector<vector<int> > valid, int x, int y){
         if (dist[x][y] <= d)continue;
         dist[x][y] = d;
         for (int i=0;i<4;i++){
-            if (0<=x+dx[i] && x+dx[i]<valid.size() && 0<=y+dy[i] && y+dy[i]<valid[0].size())
-                if (valid[x+dx[i]][y+dy[i]])
-                    Q.push(make_tuple(x+dx[i],y+dy[i],d+1));
+            if (0<=x+dx[i] && x+dx[i]<valid.size() && 0<=y+dy[i] && y+dy[i]<valid[0].size()){
+                if(valid[x+dx[i]][y+dy[i]]){
+                    int d_next = d;
+                    d_next++;   
+                    if (dist[x+dx[i]][y+dy[i]]>d_next)
+                        Q.push(make_tuple(x+dx[i],y+dy[i],d_next));
+                }
+            }
         }
     }
     return dist;
