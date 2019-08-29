@@ -2,7 +2,7 @@
 #define INF 1e9
 using namespace std;
 
-vector<vector<int> > bfs(vector<vector<int> > valid, int x, int y){
+vector<vector<int> > BFS(vector<vector<int> > valid, int x, int y){
     vector<vector<int> > dist(valid.size(), vector<int>(valid[0].size(), INF));
     queue<tuple<int,int,int>> Q;
     tuple<int,int,int> t;
@@ -43,5 +43,5 @@ int main(){
     W = 8;
     vector<vector<int> > valid(H, vector<int> (W, 1) );
     valid[4][4]=0;
-    print_vector(bfs(valid,4 ,5));
+    print_vector(BFS(valid,4 ,5));
 }
