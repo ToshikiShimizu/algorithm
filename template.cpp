@@ -12,12 +12,6 @@ const int MOD = (int)1e9 + 7;
 const int EPS = 1e-9;
 
 int main() {
-    vector<int> vec;
-    vec.push_back(1);
-    vec.push_back(3);
-    vec.push_back(2);
-    SORT(vec);
-    REP(i,vec.size()){
-        dump(vec[i]);
-    }
+  cin.tie(0);
+  ios::sync_with_stdio(false);
 }
