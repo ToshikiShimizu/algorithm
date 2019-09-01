@@ -12,7 +12,7 @@ const int INF = 999999999;
 const int MOD = (int)1e9 + 7;
 const int EPS = 1e-9;
 
-int DigitSum(int n){
+int DigitsSum(int n){
     int sum = 0;
     while(n>0){
         sum += (n % 10);
@@ -26,6 +26,6 @@ int main() {
   ios::sync_with_stdio(false);
   int n;
   cin >> n;
-  cout << DigitSum(n) << endl;
+  cout << DigitsSum(n) << endl;
 }
   
