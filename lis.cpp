@@ -18,7 +18,7 @@ int binarySearch(vector<int> S, int key){
     return left;
 }
 
-int LIS(vector<int> vec){
+int LongestIncreasingSubsequence(vector<int> vec){
     int n = vec.size();
     vector<int> lis(n, INF);
     for (int i=0;i<n;i++){
@@ -36,5 +36,5 @@ int LIS(vector<int> vec){
 
 int main(){
     vector<int> vec{1,3,2,6,9,8,10,7};
-    cout << LIS(vec) << endl;
+    cout << LongestIncreasingSubsequence(vec) << endl;
 }
