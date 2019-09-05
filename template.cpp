@@ -8,9 +8,11 @@ using namespace std;
 #define REV(a) reverse(ALL(a))
 #define dump(x)  cerr << #x << " = " << (x) << endl;
 typedef long long ll;
-const int INF = 999999999;
+const int INTINF = 1<<30;
+const ll LLINF = 1LL<<62;
 const int MOD = (int)1e9 + 7;
-const int EPS = 1e-9;
+const double EPS = 1e-9;
+
 
 int main() {
   cin.tie(0);
