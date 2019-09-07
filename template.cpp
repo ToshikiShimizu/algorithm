@@ -12,6 +12,8 @@ const int INTINF = 1<<30;
 const ll LLINF = 1LL<<62;
 const int MOD = (int)1e9 + 7;
 const double EPS = 1e-9;
+const int DX[8]={ 0, 1, 0,-1, 1, 1,-1,-1};
+const int DY[8]={ 1, 0,-1, 0, 1,-1, 1,-1};
 
 
 int main() {
