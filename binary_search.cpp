@@ -8,38 +8,46 @@ using namespace std;
 #define REV(a) reverse(ALL(a))
 #define dump(x)  cerr << #x << " = " << (x) << endl;
 typedef long long ll;
-const int INTINF = 1<<30;
-const ll LLINF = 1LL<<62;
+const int INTINF = 1<<29;
+const ll LLINF = 1LL<<61;
 const int MOD = (int)1e9 + 7;
 const double EPS = 1e-9;
 const int DX[8]={ 0, 1, 0,-1, 1, 1,-1,-1};
 const int DY[8]={ 1, 0,-1, 0, 1,-1, 1,-1};
 
+vector<int> v = {2, 2, 5, 5, 9, 9, 9, 10, 11};
 
-
-
-bool BinarySearch(vector<int> S, int key){
-    int right = S.size();
-    int left = 0;
-    int mid;
-    while(left<right){
-        mid = (left+right)/2;
-        if (S[mid] == key){
-            return true;
-        }else if(S[mid]<key){
-            left = mid+1;
-        }else
-        {
-            right = mid;
-        }
-    }
-    return false;
+bool CheckLowerBoundArray(int index, int key) {
+    return v[index] >= key;
 }
 
+bool CheckUpperBoundArray(int index, int key) {
+    return v[index] > key;
+}
+
+int BinarySearch(int key, int left, int right){
+    while (right - left > 1) {
+        int mid = left + (right - left) / 2;
+        if (CheckLowerBoundArray(mid, key)) right = mid; // 任意の関数を設定可能
+        else left = mid;
+    }
+    return right; //lower_bound
+}
+
+// BinarySearchにCheckLowerBoundArrayなど"="も真とする関数を設定する必要がある
+bool Contain(int key, int left, int right){ 
+    int lb = BinarySearch(key,left,right);
+    return v[lb]==key; 
+}
 
 int main() {
-  cin.tie(0);
-  ios::sync_with_stdio(false);
-  vector<int> vec = {1,3,5,7,9};
-  REP(i,10)cout << BinarySearch(vec, i) << endl;
+    dump(BinarySearch(1,-1,v.size()));// key, min-1, max+1
+    dump(BinarySearch(2,-1,v.size()));
+    dump(BinarySearch(3,-1,v.size()));
+    dump(BinarySearch(9,-1,v.size()));
+    dump(BinarySearch(100,-1,v.size()));
+    dump(Contain(1,-1,v.size()));
+    dump(Contain(2,-1,v.size()));
+    dump(Contain(3,-1,v.size()));
+    dump(Contain(4,-1,v.size()));
 }
