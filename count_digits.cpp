@@ -13,19 +13,19 @@ const int MOD = (int)1e9 + 7;
 const int EPS = 1e-9;
 
 int CountDigits(ll n){
-   if (n==0)return 0;
-   int sum = 0;
-   while(n>0){
+  if (n==0)return 0;
+  int sum = 0;
+  while(n>0){
      sum ++;
      n /= 10;
-   }
-   return sum;
+  }
+  return sum;
 }
 
 int main() {
-   cin.tie(0);
-   ios::sync_with_stdio(false);
-   ll n;
-   cin >> n;
-   cout << CountDigits(n) << endl;
+  cin.tie(0);
+  ios::sync_with_stdio(false);
+  ll n;
+  cin >> n;
+  cout << CountDigits(n) << endl;
 }
