@@ -17,21 +17,21 @@ const int DY[8]={ 1, 0,-1, 0, 1,-1, 1,-1};
 // 配列内に存在するかを確認したいだけであればこちらの関数が直接的で高速
 // そうでなければ、汎用的な実装であるbinary_search.cppを使う
 bool BinarySearch(vector<int> S, int key){
-    int right = S.size();
-    int left = 0;
-    int mid;
-    while(left<right){
-        mid = (left+right)/2;
-        if (S[mid] == key){
-            return true;
-        }else if(S[mid]<key){
-            left = mid+1;
-        }else
-        {
-            right = mid;
-        }
+  int right = S.size();
+  int left = 0;
+  int mid;
+  while(left<right){
+    mid = (left+right)/2;
+    if (S[mid] == key){
+      return true;
+    }else if(S[mid]<key){
+      left = mid+1;
+    }else
+    {
+      right = mid;
     }
-    return false;
+  }
+  return false;
 }
 
 int main() {

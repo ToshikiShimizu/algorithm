@@ -13,12 +13,12 @@ const int MOD = (int)1e9 + 7;
 const int EPS = 1e-9;
 
 int DigitsSum(int n){
-    int sum = 0;
-    while(n>0){
-        sum += (n % 10);
-        n /= 10;
-    }
-    return sum;
+  int sum = 0;
+  while(n>0){
+    sum += (n % 10);
+    n /= 10;
+  }
+  return sum;
 }
 
 int main() {
